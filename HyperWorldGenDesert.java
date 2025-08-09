@@ -31,20 +31,20 @@ public class HyperWorldGenDesert {
     }
 
     public static void bootstrap(BootstrapContext<Biome> context) {
-        context.register(DRY_SPINES, makeDesertBiome(1));
-        context.register(CHARRED_HOLLOW, makeDesertBiome(2));
-        context.register(ASHEN_LOWLANDS, (3));
+        context.register(DRY_SPINES, dry_spines(1));
+        context.register(CHARRED_HOLLOW, charred_hollow(2));
+        context.register(ASHEN_LOWLANDS, ashen_lowlands(3));
         context.register(SCORCHTRAIL_DUNES, scorchtrail_dunes(4));
-        context.register(DESERT_15, makeDesertBiome(5));
-        context.register(DESERT_16, makeDesertBiome(6));
-        context.register(DESERT_17, makeDesertBiome(7));
-        context.register(DESERT_18, makeDesertBiome(8));
-        context.register(DESERT_19, makeDesertBiome(9));
-        context.register(DESERT_20, makeDesertBiome(10));
+        context.register(BURNING_SHARDLANDS, burning_shardlands(5));
+        context.register(BLISTERED_WASTES, blistered_wastes(6));
+        context.register(CRACKED_BONEFIELD, cracked_bonefield(7));
+        context.register(OBSIDIAN_RIDGES, obsidian_ridges(8));
+        context.register(DRYROOT_VALLEY, dryroot_valley(9));
+        context.register(TOMB_VALLEY, tomb_valley(10));
         // ... đăng ký tiếp nếu có thêm
     }
 
-    private static Biome makeDesertBiome(int index) {
+    private static Biome dry_spines(int index) {
         BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
             .fogColor(0xE0CDA9)
             .waterColor(0xE3DDB4)
@@ -59,12 +59,60 @@ public class HyperWorldGenDesert {
             .build();
 
         return new Biome.BiomeBuilder()
-            .precipitation(Biome.Precipitation.NONE)
-            .temperature(2.0F + (index * 0.02F)) // Nhiệt độ tăng dần
+            .precipitation(Biome.Precipitation.DESERT)
+            .temperature(2.5F + (index * 0.00F)) // Nhiệt độ tăng dần
             .downfall(0.0F)
             .specialEffects(effects)
             .mobSpawnSettings(spawns)
             .generationSettings(generation)
             .build();
     }
+
+    private static Biome charred_hollow(int index) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffect.Builder()
+             .fogColor(0xE0CDA9)
+             .waterColor(0xE3DDB4)
+             .waterFogColor(0xD1C59A)
+             .skyColor(0xFFD580)
+             .build();
+
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+             .build()
+
+        MobSpawnSettings spawns = new MobSpawnSettings.Builder()
+             .build()
+
+        return new Biome.BiomeBuilder()
+             .precipitation(Biome.Precipitation.DESERT)
+             .temperature(2.8f + (index * 0.00f)
+             .downfall(0.0f)
+             .specialEffects(effects)
+             .MobSpawnSettings(spawns)
+             .generationSettings(generation)
+             .build();
+    }
+
+    private static Biome ashen_lowlands(int index) {
+        BiomeSpecialEffects effects= new BiomeSpecialEffects.Builder()
+             .fogColor(0xE0CDA9)
+             .waterColor(0xE3DDB4)
+             .waterFogColor(0xD1C59A)
+             .skyColor(0xFFD580)
+             .build()
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+             .build()
+
+        MobSpawnSettings spawn = new MobSpawnSetting.Builder()
+             .build()
+
+        return new Biome.BiomeBuilder()
+             .precipitation(Biome.Precipitation.DESERT)
+             .temperature(3.5f + (index * 0.00f)
+             .downfall(0.0f)
+             .specialEffects(effects)
+             .MobSpawnSettings(spawns)
+             .generationSettings(generation)
+             .build()        
+    }
+    
 }
