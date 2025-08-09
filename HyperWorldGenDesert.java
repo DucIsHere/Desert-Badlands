@@ -31,9 +31,9 @@ public class HyperWorldGenDesert {
     }
 
     public static void bootstrap(BootstrapContext<Biome> context) {
-        context.register(DRY_SPINES, makeDesertBiome(1));
-        context.register(DESERT_12, makeDesertBiome(2));
-        context.register(DESERT_13, makeDesertBiome(3));
+        context.register(DRY_SPINES, dry_spines(1));
+        context.register(CHARRED_HOLLOW, charred_hollow(2));
+        context.register(ASHEN_LOWLANDS, makeDesertBiome(3));
         context.register(DESERT_14, makeDesertBiome(4));
         context.register(DESERT_15, makeDesertBiome(5));
         context.register(DESERT_16, makeDesertBiome(6));
