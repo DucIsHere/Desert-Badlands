@@ -27,14 +27,14 @@ public class HyperWorldGenDesert {
     // ... thêm tiếp tới DESERT_30 nếu muốn
 
     private static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, new ResourceLocation("yourmodid", name));
+        return ResourceKey.create(Registries.BIOME, new ResourceLocation("hypergenworld", desert));
     }
 
     public static void bootstrap(BootstrapContext<Biome> context) {
         context.register(DRY_SPINES, dry_spines(1));
         context.register(CHARRED_HOLLOW, charred_hollow(2));
-        context.register(ASHEN_LOWLANDS, makeDesertBiome(3));
-        context.register(DESERT_14, makeDesertBiome(4));
+        context.register(ASHEN_LOWLANDS, ashen_lowlands(3));
+        context.register(SCORCHTRAIL_DUNES, scorchtrail_dunes(4));
         context.register(DESERT_15, makeDesertBiome(5));
         context.register(DESERT_16, makeDesertBiome(6));
         context.register(DESERT_17, makeDesertBiome(7));
