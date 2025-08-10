@@ -112,7 +112,7 @@ public class HyperWorldGenDesert {
              .specialEffects(effects)
              .MobSpawnSettings(spawns)
              .generationSettings(generation)
-             .build()        
+             .build();        
     }
     
 }
