@@ -84,7 +84,7 @@ public class HyperWorldGenDesert {
 
         return new Biome.BiomeBuilder()
              .precipitation(Biome.Precipitation.DESERT)
-             .temperature(2.8f + (index * 0.00f)
+             .temperature(2.8f + (index * 0.00f))
              .downfall(0.0f)
              .specialEffects(effects)
              .MobSpawnSettings(spawns)
@@ -99,6 +99,7 @@ public class HyperWorldGenDesert {
              .waterFogColor(0xD1C59A)
              .skyColor(0xFFD580)
              .build()
+            
         BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
              .build()
 
@@ -107,12 +108,108 @@ public class HyperWorldGenDesert {
 
         return new Biome.BiomeBuilder()
              .precipitation(Biome.Precipitation.DESERT)
-             .temperature(3.5f + (index * 0.00f)
+             .temperature(3.5f + (index * 0.00f))
              .downfall(0.0f)
              .specialEffects(effects)
              .MobSpawnSettings(spawns)
              .generationSettings(generation)
              .build();        
+    }
+    
+    private static Biome scorchtrail_dunes(int index) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
+             .fogColor(0xE0CDA9)
+             .waterColor(0xE3DDB4)
+             .waterFogColor(0xD1C59A)
+             .skyColor(0xFFD590)
+             .build()
+            
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+             .build()
+
+        MobSpawnSettings spawn = new MobSpawnSettings.Builder()
+             .build()
+
+        return new Biome.BiomeBuilder()
+             .precipitation(Biome.Precipitation.DESERT)
+             .temperature(3.0f + (index * 0.02f))
+             .downfall(0.0f)
+             .specialEffects(effects)
+             .MobSpawnSettings(spawns)
+             .generationSettings(generation)
+             .build();
+    }
+
+    private static Biome burning_shardlands(int index) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
+             .fogColor(0xE0CDA9)
+             .waterColor(0xE3DDB4)
+             .waterFogColor(0xD1C59A)
+             .skyColor(0xFFD580)
+             .build()
+
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+             .build()
+
+        MobSpawnSettings spawn = new MobSpawnSettings.Builder()
+             .build()
+
+        return new Biome.BiomeBuilder()
+             .precipitation(Biome.Precipitation.DESERT)
+             .temperature(4.5f + (index * 0.05f))
+             .downfall(0.00f)
+             .specialEffects(effects)
+             .MobSpawnSettings(spawns)
+             .generationSettings(generation)
+             .build();
+    }
+
+    private static Biome blistered_wastes(int index) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
+            .fogColor(0xE0CDA9)
+            .waterColor(0xE3DDB4)
+            .waterFogColor(0xD1C59A)
+            .skyColor(0xFFD580)
+            .build()
+
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+            .build()
+
+        MobSpawnSettings spawn = new MobSpawnSettings.Builder()
+            .build()
+
+        return new Biome.BiomeBuilder()
+            .precipitation(Biome.Precipitation.NONE)
+            .temperature(2.0f + (index * 0.00f))
+            .downfall(0.00f)
+            .specialEffects(effects)
+            .MobSpawnSettings(spawns)
+            .generationSettings(generation)
+            .build()
+    }
+
+    private static Biome cracked_bonefield(int index) {
+        BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
+            .fogColor(0xE0CDA9)
+            .waterColor(0xE3DDB4)
+            .waterFogColor(0xD1C59A)
+            .skyColor(0xFFD580)
+            .build()
+
+        BiomeGenerationSettings generation = new BiomeGenerationSettings.Builder()
+            .build()
+
+        MobSpawnSettings spawns = new MobSpawnSettings.Builder()
+            .build()
+
+        return new Biome.BiomeBuilder()
+            .precipitation(Biome.Precipitaion.DESERT)
+            .temperature(4.25f + (index * 0.02f))
+            .downfall(0.00f)
+            .specialEffects(effects)
+            .MobSpawnSettings(spawn)
+            .generationSettings(generation)
+            .build();
     }
     
 }
